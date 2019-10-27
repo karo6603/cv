@@ -26,6 +26,8 @@ body {
 h1 {
   font-family: "Major Mono Display", monospace;
   font-size: 2.5em;
+  text-align: center;
+  margin-top: 100px;
 }
 
 h2 {
@@ -87,18 +89,20 @@ a {
   background: url(assets/sprite.svg) 0px 0px;
   background-size: 2700px 9000px;
   height: 700px;
-  width: 780px;
-  animation: play 1s steps(3) infinite reverse;
+  width: 850px;
+  animation: play 1s steps(1) infinite;
+  margin-left: -90px;
 }
 
 @keyframes play {
   0% {
-    background-position: 0px;
+    background-position: 900px;
   }
 
-  100% {
-    background-position: 2700px;
+  50%{
+      background-position: 1800px;
   }
+  
 }
 
 /* START */
@@ -115,7 +119,7 @@ a {
 
 .line {
   box-sizing: border-box;
-  border: black solid;
+  border: #B95B5B solid;
   width: 100px;
   margin: 50px auto;
 }
@@ -153,11 +157,6 @@ i {
   justify-content: space-around;
 }
 
-#cv h1 {
-  text-align: center;
-  margin-top: 100px;
-}
-
 #cv .top,
 #cv .bottom {
   display: flex;
@@ -177,8 +176,148 @@ i {
   width: 40%;
 }
 
+ul:first-child {
+  padding: 0;
+  margin-right;: 40px;
+}
+
 li {
   list-style: none;
   text-align: left;
   font-family: "Raleway", sans-serif;
+}
+
+/* PORTFOLIO */
+#portfolio .top,
+#portfolio .bottom {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+#p1,
+#p2,
+#p3,
+#p4 {
+  margin: 50px;
+  width: 40%;
+}
+
+#portfolio img {
+  width: 100%;
+  margin: auto 10px;
+}
+.pimage {
+  height: 200px;
+  width: 100%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+}
+#portfolio h2 {
+  text-align: center;
+}
+
+.skills {
+  display: flex;
+  flex-direction: row;
+}
+
+/* KONTAKT */
+
+#kontakt{
+    display: flex;
+    flex-direction: column;
+margin-bottom: 200px;
+}
+
+#kontakt .top, #kontakt .bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 30%;
+    margin: 30px auto;
+}
+
+#kontakt img{
+    margin: 0 50px;
+}
+
+/* MEDIAQUERIES */
+@media only screen and (max-width: 1400px){
+    #start .text{
+        margin: 0px 100px;
+        width: 30%;
+    }
+
+    #sprite{
+        width: 900px;
+        height: 800px;
+    }
+
+    #cv .top, #cv .bottom, #portfolio .top, #portfolio .bottom{
+width: 70%;
+    }
+
+    #kontakt .top, #kontakt .bottom{
+        width: 40%;
+    }
+
+}
+
+@media only screen and (max-width: 1100px){
+    #start{
+        flex-direction: column-reverse;
+    }
+
+    #start .text{
+        margin: 100px auto;
+        width: 100%;
+    }
+
+    #sprite{
+        display: none;
+    }
+
+
+}
+
+@media only screen and (max-width: 1000px){
+    #cv .top, #cv .bottom, #portfolio .top, #portfolio .bottom{
+        width: 90%;
+            }
+        
+            #kontakt .top, #kontakt .bottom{
+                width: 50%;
+            }
+}
+@media only screen and (max-width: 750px){
+    #cv .top, #cv .bottom, #portfolio .top, #portfolio .bottom, #cv img{
+        flex-direction: column;
+        margin: 20px auto;
+        width: 60%;
+        justify-content: center;
+            }
+        
+            #kontakt .top, #kontakt .bottom{
+                width: 90%;
+            }
+
+            #cv .top .text {
+                justify-content: space-evenly;
+                width: 100%;
+              }
+
+              #p1, #p2, #p3, #p4{
+                  width: 100%;
+                  margin: 0 auto;
+              }
+
+              .pimage{
+                  width: 100%;
+              }
+
+        
 }
